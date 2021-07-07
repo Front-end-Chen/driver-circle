@@ -1,0 +1,40 @@
+.tabfooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 49px;
+  font-family: PingFangSC-Regular;
+  line-height: 10px;
+}
+.tabfooter .tab-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 49px;
+  font-size: 10px;
+  color: #000;
+  text-align: center;
+}
+.tabfooter .tab-item .driver {
+  width: 24px;
+  height: 24px;
+  margin: 4px 0;
+  background: url(../../../assets/img/车友圈@2x.png) no-repeat;
+  background-size: cover;
+}
+.tabfooter .tab-item .my {
+  width: 32px;
+  height: 32px;
+  background: url(../../../assets/img/未选中@2x.png) no-repeat;
+  background-size: cover;
+}
+.tabfooter .myactive .my {
+  background: url(../../../assets/img/选中@2x.png) no-repeat;
+  background-size: cover;
+}
+/*# sourceMappingURL=./index.css.map */
