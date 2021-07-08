@@ -1,0 +1,206 @@
+.home {
+  margin-top: 45px;
+  margin-bottom: 50px;
+}
+.home .hot-driver-circle {
+  border-bottom: 1px solid #f6f6f6;
+}
+.home .hot-driver-circle .title {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 25px;
+  margin-left: 20px;
+  background: url(../../../assets/img/热门车友圈@2x.png) no-repeat left;
+  background-size: 18px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: PingFangSC-Medium;
+}
+.home .hot-driver-circle .circle-list {
+  /*设置滚动条隐藏*/
+  overflow: auto;
+  height: 180px;
+  display: flex;
+  padding: 5px 0px 20px 20px;
+}
+.home .hot-driver-circle .circle-list::-webkit-scrollbar {
+  display: none;
+}
+.home .hot-driver-circle .circle-list .item {
+  width: 246px;
+  height: 178px;
+  padding: 0 12px;
+  margin-right: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.home .hot-driver-circle .circle-list .item .item-title {
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.home .hot-driver-circle .circle-list .item .imglist {
+  display: flex;
+  width: 100%;
+  height: 97px;
+}
+.home .hot-driver-circle .circle-list .item .imglist img {
+  width: 73px;
+  height: 100%;
+  margin-right: 1px;
+}
+.home .hot-driver-circle .circle-list .item .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 42px;
+}
+.home .hot-driver-circle .circle-list .item .info .head-imglist {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.home .hot-driver-circle .circle-list .item .info .head-imglist img {
+  width: 18px;
+  height: 18px;
+  margin-right: -4px;
+  border-radius: 50%;
+}
+.home .hot-driver-circle .circle-list .item .info .sum {
+  line-height: 22px;
+  padding: 0 5px;
+}
+.home .hot-driver-circle .circle-list .item .info .join {
+  height: 20px;
+  padding: 4px 10px;
+  color: #9f9f9f;
+  background: #f4f5f6;
+  border-radius: 10px;
+}
+.home .hot-driver-circle .circle-list .item .info .no-join {
+  height: 20px;
+  padding: 4px 10px;
+  background: #ffe100;
+  border-radius: 10px;
+}
+.home .posts {
+  overflow: auto;
+  /*设置滚动条隐藏*/
+}
+.home .posts::-webkit-scrollbar {
+  display: none;
+}
+.home .posts .item {
+  padding: 20px;
+  border-bottom: 1px solid #f6f6f6;
+}
+.home .posts .item .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 36px;
+}
+.home .posts .item .head .left-info {
+  display: flex;
+  height: 100%;
+}
+.home .posts .item .head .left-info img {
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+.home .posts .item .head .left-info .post-head {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.home .posts .item .head .left-info .post-head .name {
+  font-size: 14px;
+  font-weight: bold;
+}
+.home .posts .item .head .left-info .post-head .post-time {
+  color: #999;
+}
+.home .posts .item .head .no-follow {
+  height: 28px;
+  padding: 6px 18px;
+  background: #ffe100;
+  border-radius: 14px;
+  font-weight: bold;
+}
+.home .posts .item .head .follow {
+  height: 28px;
+  padding: 6px 18px;
+  font-weight: bold;
+  color: #9f9f9f;
+  background: #f4f5f6;
+  border-radius: 14px;
+}
+.home .posts .item .post-content {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 24px;
+}
+.home .posts .item .post-imglist {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.home .posts .item .post-imglist img {
+  width: 33%;
+  max-height: 200px;
+  margin-right: 2px;
+}
+.home .posts .item .bottom {
+  height: 26px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.home .posts .item .bottom .bottom-carcircle {
+  height: 100%;
+  padding-left: 25px;
+  padding-right: 10px;
+  line-height: 26px;
+  background: url(../../../assets/img/车友圈@2x.png) no-repeat 5px;
+  background-color: #f4f5f6;
+  background-size: 16px;
+  border-radius: 4px;
+}
+.home .posts .item .bottom .bottom-handle {
+  display: flex;
+  height: 100%;
+}
+.home .posts .item .bottom .bottom-handle .comment-wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+.home .posts .item .bottom .bottom-handle .comment-wrap .comment {
+  width: 24px;
+  height: 24px;
+  background: url(../../../assets/img/评论@2x.png) no-repeat center;
+  background-size: 20px;
+  margin-right: 5px;
+}
+.home .posts .item .bottom .bottom-handle .support-wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.home .posts .item .bottom .bottom-handle .support-wrap .support {
+  width: 24px;
+  height: 24px;
+  background: url(../../../assets/img/点赞@2x.jpg) no-repeat center;
+  background-size: 18px;
+  margin-right: 3px;
+}
+/*# sourceMappingURL=./index.css.map */

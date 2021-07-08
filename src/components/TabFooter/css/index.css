@@ -8,6 +8,7 @@
   height: 49px;
   font-family: PingFangSC-Regular;
   line-height: 10px;
+  background-color: #fff;
 }
 .tabfooter .tab-item {
   display: flex;
@@ -32,6 +33,11 @@
   height: 32px;
   background: url(../../../assets/img/未选中@2x.png) no-repeat;
   background-size: cover;
+}
+.tabfooter .driveractive .driver {
+  margin: 6px 0 3px 4px;
+  background: url(../../../assets/img/车友圈选中@2x.png) no-repeat;
+  background-size: 23px;
 }
 .tabfooter .myactive .my {
   background: url(../../../assets/img/选中@2x.png) no-repeat;
