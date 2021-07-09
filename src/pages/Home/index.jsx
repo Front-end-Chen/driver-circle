@@ -1,4 +1,6 @@
 import React, { memo, useState } from "react";
+import { Popover } from "antd-mobile";
+import TabFooter from "@comp/TabFooter";
 import Header from "@comp/Header";
 import "./css/index.less";
 import img1 from "../../assets/img/1.jpg";
@@ -8,12 +10,29 @@ import img4 from "../../assets/img/用户1.jpeg";
 import img5 from "../../assets/img/用户2.jpeg";
 import img6 from "../../assets/img/用户3.png";
 import img7 from "../../assets/img/更多@2x.png";
+import img8 from "../../assets/img/图文.png";
+import img9 from "../../assets/img/问答.png";
+const Item = Popover.Item;
 
-export default memo(function Home() {
+export default memo(function Home(props) {
   //车友圈加入按钮标记
   const [isJoin, setIsJoin] = useState(false);
   //帖子关注按钮标记
   const [isFollow, setIsFollow] = useState(false);
+  //模态框显示隐藏标记
+  const [visible, setVisible] = useState(false);
+  //选中的选项
+  const [selected, setSelected] = useState("");
+
+  
+  const onSelect = opt => {
+    setVisible(false);
+    props.history.push("/" + opt.props.value)
+  };
+
+  const handleVisibleChange = visible => {
+    setVisible(visible);
+  };
 
   //车友圈加入按钮的点击回调
   const joinCarCircle = e => {
@@ -205,6 +224,28 @@ export default memo(function Home() {
             </div>
           </div>
         </div>
+        <Popover
+          mask
+          placement="topRight"
+          visible={visible}
+          overlayStyle={{fontWeight: "bold"}}
+          overlay={[
+            <Item key="1" value="issuequestion" icon={<img style={{width: "20px", height: "20px" ,marginBottom: "15px"}} src={img9} alt=""/>}>
+              问答
+            </Item>,
+            <Item key="2" value="issueimageandtext" icon={<img style={{width: "20px", height: "20px" ,marginBottom: "15px"}} src={img8} alt=""/>}>
+              图文
+            </Item>,
+          ]}
+          align={{
+            offset: [-20, -6],
+          }}
+          onVisibleChange={handleVisibleChange}
+          onSelect={onSelect}
+        >
+          <button className="issue">发布</button>
+        </Popover>
+        <TabFooter />
       </div>
     </>
   );

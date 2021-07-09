@@ -11,7 +11,7 @@ export default memo(function TabFooter() {
           <span>车友圈</span>
         </div>
       </NavLink>
-      <NavLink to="/login" activeClassName="myactive">
+      <NavLink to="/myprofile" activeClassName="myactive">
         <div className="tab-item">
           <div className="my"></div>
           <span>我的</span>

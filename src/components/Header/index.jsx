@@ -1,9 +1,10 @@
 import React, { memo } from "react";
+import { withRouter } from "react-router-dom";
 import { NavBar, Icon } from "antd-mobile";
 
 import "./css/index.less";
 
-export default memo(function Header(props) {
+function Header(props) {
   const { title } = props;
   return (
     <div className="header-wrap">
@@ -11,11 +12,14 @@ export default memo(function Header(props) {
         className="header"
         mode="light"
         icon={<Icon type="left" className="left" />}
-        onLeftClick={() => console.log("onLeftClick")}
+        onLeftClick={() =>
+          props.to ? props.history.replace(props.to) : props.history.goBack()
+        }
         rightContent={<Icon type="ellipsis" />}
       >
         {title}
       </NavBar>
     </div>
   );
-});
+}
+export default withRouter(memo(Header));

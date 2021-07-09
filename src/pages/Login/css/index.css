@@ -1,0 +1,51 @@
+body,
+html {
+  height: auto;
+}
+.login-wrap {
+  margin-top: 45px;
+  padding: 0 28px;
+}
+.login-wrap .title {
+  padding: 30px 0;
+  font-size: 24px;
+  line-height: 35px;
+  font-weight: bold;
+}
+.login-wrap .login-input-wrap {
+  margin-bottom: 10px;
+}
+.login-wrap .login-input-wrap:nth-child(2) {
+  margin-bottom: 15px;
+}
+.login-wrap .ant-form-item .ant-form-item-label,
+.login-wrap .ant-form-item .ant-form-item-control {
+  flex-basis: initial;
+}
+.login-wrap .ant-form-item .ant-form-item-label {
+  width: 20%;
+}
+.login-wrap .ant-form-item .ant-form-item-control {
+  width: 80%;
+}
+.login-wrap .ant-form-item .ant-form-item-label > label,
+.login-wrap .ant-form-item .ant-form-item-control input {
+  font-size: 16px;
+}
+.login-wrap .ant-form-item .ant-form-item-label > label {
+  font-weight: bold;
+}
+.login-wrap .login-form-button-item {
+  margin-bottom: 0;
+}
+.login-wrap .login-form-button-item .login-form-button {
+  color: #1f2129;
+}
+.login-wrap .tooltip {
+  height: 18px;
+  padding: 12px 0;
+  color: #979aa8;
+  text-align: center;
+  line-height: 18px;
+}
+/*# sourceMappingURL=./index.css.map */

@@ -17,11 +17,17 @@ module.exports = override(
     // style: 'css', // 自动打包组件对应css
     style: true, // 加载less编译
   }),
+  fixBabelImports('antd', {
+    libraryName: 'antd',
+    libraryDirectory: 'es',    
+    style: true,
+  }),
   // 添加less-loader对应的配置  ==> 修改primary对应的颜色
   addLessLoader({
     lessOptions: {
       javascriptEnabled: true,
       modifyVars: {
+        "@primary-color": "#FFCC32"
         // "@brand-primary": "#1DA57A",
         // "@brand-primary-tap": "#1DA57A",
       },
