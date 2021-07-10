@@ -1,0 +1,64 @@
+.info-list {
+  width: 100%;
+  margin-top: 45px;
+  padding: 16px 16px 0 16px;
+}
+.info-list .item {
+  display: flex;
+  margin-bottom: 20px;
+}
+.info-list .item .avatar {
+  width: 35px;
+  height: 35px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+.info-list .item .right-info {
+  flex: 1;
+}
+.info-list .item .right-info .username {
+  font-size: 14px;
+  font-weight: bold;
+}
+.info-list .item .right-info .info-content {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 16px;
+  color: #222;
+}
+.info-list .item .right-info .info-date {
+  color: #999;
+  margin-right: 5px;
+}
+.info-list .item .right-info .delete-item {
+  width: 14px;
+  height: 14px;
+  background: url(../../../assets/img/delete.png) no-repeat;
+  background-size: 14px;
+}
+.info-list .bottom-info {
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: #999;
+}
+.null-list {
+  display: flex;
+  width: 100%;
+  height: 667px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.null-list .null-pic {
+  widows: 150px;
+  height: 150px;
+}
+.null-list .null-info {
+  height: 60px;
+  color: #999;
+  font-size: 13px;
+  text-align: center;
+  line-height: 60px;
+}
+/*# sourceMappingURL=./index.css.map */

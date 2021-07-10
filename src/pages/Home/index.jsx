@@ -12,6 +12,7 @@ import img6 from "../../assets/img/用户3.png";
 import img7 from "../../assets/img/更多@2x.png";
 import img8 from "../../assets/img/图文.png";
 import img9 from "../../assets/img/问答.png";
+import { HOME } from "@/common/title";
 const Item = Popover.Item;
 
 export default memo(function Home(props) {
@@ -21,15 +22,14 @@ export default memo(function Home(props) {
   const [isFollow, setIsFollow] = useState(false);
   //模态框显示隐藏标记
   const [visible, setVisible] = useState(false);
-  //选中的选项
-  const [selected, setSelected] = useState("");
 
-  
+  //选中模态框选项的回调
   const onSelect = opt => {
     setVisible(false);
     props.history.push("/" + opt.props.value)
   };
-
+  
+  //处理显示隐藏的回调
   const handleVisibleChange = visible => {
     setVisible(visible);
   };
@@ -50,7 +50,7 @@ export default memo(function Home(props) {
 
   return (
     <>
-      <Header title="车友圈" />
+      <Header title={HOME} />
       <div className="home">
         <div className="hot-driver-circle">
           <header className="title">热门车友圈</header>
@@ -230,12 +230,12 @@ export default memo(function Home(props) {
           visible={visible}
           overlayStyle={{fontWeight: "bold"}}
           overlay={[
-            <Item key="1" value="issuequestion" icon={<img style={{width: "20px", height: "20px" ,marginBottom: "15px"}} src={img9} alt=""/>}>
-              问答
-            </Item>,
-            <Item key="2" value="issueimageandtext" icon={<img style={{width: "20px", height: "20px" ,marginBottom: "15px"}} src={img8} alt=""/>}>
+            <Item key="1" value="issueimageandtext" icon={<img style={{width: "20px", height: "20px" ,marginBottom: "15px"}} src={img8} alt=""/>}>
               图文
             </Item>,
+             <Item key="2" value="issuequestion" icon={<img style={{width: "20px", height: "20px" ,marginBottom: "15px"}} src={img9} alt=""/>}>
+             问答
+           </Item>,
           ]}
           align={{
             offset: [-20, -6],

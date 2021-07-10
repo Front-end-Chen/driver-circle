@@ -5,6 +5,9 @@ import MyProfile from './pages/MyProfile'
 import Login from "./pages/Login";
 import IssueQuestion from "./pages/IssueQuestion";
 import IssueImageAndText from "./pages/IssueImageAndText";
+import MyActivity from "./pages/MyActivity";
+import MyComment from "./pages/MyComment";
+
 
 export default memo(function App() {
   return (
@@ -13,6 +16,8 @@ export default memo(function App() {
         <Route path="/home" component={Home}/>
         <Route path="/myprofile" component={MyProfile}/>
         <Route path="/login" component={Login}/>
+        <Route path="/myactivity" component={MyActivity}/>
+        <Route path="/mycomment" component={MyComment}/>
         <Route path="/issuequestion" component={IssueQuestion}/>
         <Route path="/issueimageandtext" component={IssueImageAndText}/>
         <Redirect to="/home" />

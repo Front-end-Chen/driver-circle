@@ -1,0 +1,50 @@
+.info-list {
+  width: 100%;
+  margin-top: 45px;
+  padding: 16px 16px 0 16px;
+}
+.info-list .item {
+  display: flex;
+  margin-bottom: 20px;
+}
+.info-list .item .avatar {
+  width: 35px;
+  height: 35px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+.info-list .item .right-info {
+  flex: 1;
+}
+.info-list .item .right-info .username {
+  font-size: 14px;
+  font-weight: bold;
+}
+.info-list .item .right-info .info-content {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 16px;
+  color: #222;
+}
+.info-list .item .right-info .info-date,
+.info-list .item .right-info .comment-sum {
+  color: #999;
+  margin-right: 5px;
+}
+.info-list .item .right-info .delete-item {
+  width: 14px;
+  height: 14px;
+  background: url(../../../assets/img/delete.png) no-repeat;
+  background-size: 14px;
+}
+.info-list .item .item-img {
+  width: 70px;
+  height: 70px;
+}
+.info-list .bottom-info {
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: #999;
+}
+/*# sourceMappingURL=./index.css.map */

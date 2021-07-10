@@ -5,11 +5,12 @@ import Header from "@comp/Header";
 import "./css/index.less";
 import img4 from "../../assets/img/用户1.jpeg";
 import img5 from "../../assets/img/arrow_ic.png";
+import { MYPROFILE } from "@/common/title";
 
 export default memo(function MyProfile() {
   const MyProfile = (
     <>
-      <Header title="我的" />
+      <Header title={MYPROFILE} />
       <div className="myprofile">
         <div className="profile">
           <img src={img4} alt="" />
@@ -22,11 +23,11 @@ export default memo(function MyProfile() {
           </div>
         </div>
         <div className="mypostinfo">
-          <Link to="/myprofile/myactivity" className="item myactivity">
+          <Link to="/myactivity" className="item myactivity">
             <span>我的动态</span>
             <img src={img5} alt="" />
           </Link>
-          <Link to="/myprofile/mycomment" className="item mycomment">
+          <Link to="/mycomment" className="item mycomment">
             <span>我的评论</span>
             <img src={img5} alt="" />
           </Link>
