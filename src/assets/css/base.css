@@ -95,10 +95,10 @@ html {
 } */
 
 /* 设置滚动条隐藏 */
-/* html::-webkit-scrollbar,
+html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
-} */
+}
 
 /* * {
   box-sizing: border-box;

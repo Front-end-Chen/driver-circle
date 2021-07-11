@@ -1,5 +1,5 @@
 import React, { memo, useState } from "react";
-import { Popover } from "antd-mobile";
+import { Popover, Modal } from "antd-mobile";
 import TabFooter from "@comp/TabFooter";
 import Header from "@comp/Header";
 import "./css/index.less";
@@ -10,29 +10,18 @@ import img4 from "../../assets/img/用户1.jpeg";
 import img5 from "../../assets/img/用户2.jpeg";
 import img6 from "../../assets/img/用户3.png";
 import img7 from "../../assets/img/更多@2x.png";
-import img8 from "../../assets/img/图文.png";
-import img9 from "../../assets/img/问答.png";
+// import img8 from "../../assets/img/图文.png";
+// import img9 from "../../assets/img/问答.png";
 import { HOME } from "@/common/title";
-const Item = Popover.Item;
+// const Item = Popover.Item;
 
 export default memo(function Home(props) {
   //车友圈加入按钮标记
   const [isJoin, setIsJoin] = useState(false);
   //帖子关注按钮标记
   const [isFollow, setIsFollow] = useState(false);
-  //模态框显示隐藏标记
-  const [visible, setVisible] = useState(false);
-
-  //选中模态框选项的回调
-  const onSelect = opt => {
-    setVisible(false);
-    props.history.push("/" + opt.props.value)
-  };
-  
-  //处理显示隐藏的回调
-  const handleVisibleChange = visible => {
-    setVisible(visible);
-  };
+  //模态框显示标记
+  const [isVisible, setIsVisible] = useState(false);
 
   //车友圈加入按钮的点击回调
   const joinCarCircle = e => {
@@ -46,6 +35,24 @@ export default memo(function Home(props) {
     e.target.innerText = isFollow ? "关注" : "已关注";
     e.target.className = isFollow ? "no-follow" : "follow";
     setIsFollow(!isFollow);
+  };
+
+  //发布按钮显示模态框回调
+  const showModal = e => {
+    e.preventDefault(); // 修复 Android 上点击穿透
+    setIsVisible(true);
+  };
+
+  //模态框图文按钮的回调
+  const issueImageAndText = () => {
+    setIsVisible(false);
+    props.history.replace("/issueimageandtext");
+  };
+
+  //模态框问答按钮的回调
+  const issueQuestion = () => {
+    setIsVisible(false);
+    props.history.replace("/issuequestion");
   };
 
   return (
@@ -224,18 +231,84 @@ export default memo(function Home(props) {
             </div>
           </div>
         </div>
+        <button className="issue" onClick={showModal}>
+          发布
+        </button>
+      </div>
+      <TabFooter />
+
+      {/* 更佳方案 */}
+      <Modal
+        visible={isVisible}
+        transparent
+        className="modal-home"
+        onClose={() => {
+          setIsVisible(false);
+        }}
+      >
+        <div className="issue-imageandtext" onClick={issueImageAndText}>
+          图文
+        </div>
+        <div className="issue-question" onClick={issueQuestion}>
+          问答
+        </div>
+      </Modal>
+
+      {/* 方案1 */}
+      {/* 
+        //模态框显示隐藏标记
+        const [visible, setVisible] = useState(false);
+
+        //选中模态框选项的回调
+        const onSelect = opt => {
+          setVisible(false);
+          props.history.push("/" + opt.props.value);
+        };
+
+        //处理显示隐藏的回调
+        const handleVisibleChange = visible => {
+          setVisible(visible);
+        };
         <Popover
           mask
           placement="topRight"
           visible={visible}
-          overlayStyle={{fontWeight: "bold"}}
+          overlayStyle={{ fontWeight: "bold" }}
           overlay={[
-            <Item key="1" value="issueimageandtext" icon={<img style={{width: "20px", height: "20px" ,marginBottom: "15px"}} src={img8} alt=""/>}>
+            <Item
+              key="1"
+              value="issueimageandtext"
+              icon={
+                <img
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    marginBottom: "15px",
+                  }}
+                  src={img8}
+                  alt=""
+                />
+              }
+            >
               图文
             </Item>,
-             <Item key="2" value="issuequestion" icon={<img style={{width: "20px", height: "20px" ,marginBottom: "15px"}} src={img9} alt=""/>}>
-             问答
-           </Item>,
+            <Item
+              key="2"
+              value="issuequestion"
+              icon={
+                <img
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    marginBottom: "15px",
+                  }}
+                  src={img9}
+                  alt=""
+                />
+              }
+            >
+              问答
+            </Item>,
           ]}
           align={{
             offset: [-20, -6],
@@ -244,9 +317,7 @@ export default memo(function Home(props) {
           onSelect={onSelect}
         >
           <button className="issue">发布</button>
-        </Popover>
-        <TabFooter />
-      </div>
+        </Popover> */}
     </>
   );
 });
