@@ -8,6 +8,8 @@ import IssueImageAndText from "./pages/IssueImageAndText";
 import MyActivity from "./pages/MyActivity";
 import MyComment from "./pages/MyComment";
 import CheckCircle from "./pages/CheckCircle";
+import CircleDetail from "./pages/CircleDetail";
+import Post from "./pages/Post";
 
 export default memo(function App() {
   return (
@@ -21,6 +23,8 @@ export default memo(function App() {
         <Route path="/issueimageandtext" component={IssueImageAndText}/>
         <Route path="/issuequestion" component={IssueQuestion}/>
         <Route path="/checkcircle" component={CheckCircle}/>
+        <Route path="/circledetail/:cid" component={CircleDetail}/>
+        <Route path="/post/:pid" component={Post}/>
         <Redirect to="/home" />
       </Switch>
     </>

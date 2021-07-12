@@ -1,0 +1,230 @@
+.circle-detail-wrap {
+  margin-top: 45px;
+  .circle-profile {
+    height: 110px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 6px solid #f4f5f6;
+    .left {
+      width: 245px;
+      .circle-name {
+        margin-bottom: 5px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .left-mid {
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        .circle-leader {
+          margin-right: 8px;
+        }
+        .circle-leader-img {
+          margin-right: 15px;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+        }
+        .avatar-list {
+          margin-right: 12px;
+          img {
+            width: 16px;
+            height: 16px;
+            margin-right: -4px;
+            border-radius: 50%;
+          }
+        }
+      }
+      .circle-intro {
+        display: inline-block;
+        width: 100%;
+      }
+    }
+    .right {
+      width: 114px;
+      height: 74px;
+      line-height: 74px;
+      text-align: right;
+      .join,
+      .no-join {
+        font-size: 14px;
+        width: 75px;
+        height: 28px;
+        text-align: center;
+        line-height: 28px;
+        border-radius: 16px;
+      }
+      .join {
+        color: #9f9f9f;
+        background: #f4f5f6;
+      }
+      .no-join {
+        background: #ffe100;
+      }
+    }
+  }
+  .tab-bar {
+    padding-left: 16px;
+    button {
+      height: 45px;
+      font-size: 16px;
+      margin-right: 20px;
+    }
+    .active {
+      font-weight: bold;
+      border-bottom: 3px solid #333;
+    }
+    .no-active {
+      font-weight: normal;
+      border-bottom: 0;
+    }
+  }
+  .posts {
+    .item {
+      padding: 20px;
+      border-bottom: 1px solid #f6f6f6;
+      .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 36px;
+        .left-info {
+          display: flex;
+          height: 100%;
+          img {
+            width: 36px;
+            height: 36px;
+            margin-right: 8px;
+            border-radius: 50%;
+          }
+          .post-head {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .name {
+              font-size: 14px;
+              font-weight: bold;
+            }
+            .post-time {
+              color: #999;
+            }
+          }
+        }
+        .no-follow {
+          height: 28px;
+          padding: 6px 18px;
+          background: #ffe100;
+          border-radius: 14px;
+          font-weight: bold;
+        }
+        .follow {
+          height: 28px;
+          padding: 6px 18px;
+          font-weight: bold;
+          color: #9f9f9f;
+          background: #f4f5f6;
+          border-radius: 14px;
+        }
+      }
+      .post-content {
+        // width: 100%;
+        margin-top: 10px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .post-imglist {
+        // width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        img {
+          width: 33%;
+          max-height: 200px;
+          margin-right: 2px;
+        }
+      }
+      .bottom {
+        height: 26px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        .bottom-carcircle {
+          height: 100%;
+          padding-left: 25px;
+          padding-right: 10px;
+          line-height: 26px;
+          background: url(../../../assets/img/车友圈@2x.png) no-repeat 5px;
+          background-color: #f4f5f6;
+          background-size: 16px;
+          border-radius: 4px;
+        }
+        .bottom-handle {
+          display: flex;
+          height: 100%;
+          .comment-wrap {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin-right: 16px;
+            .comment {
+              width: 24px;
+              height: 24px;
+              background: url(../../../assets/img/评论@2x.png) no-repeat center;
+              background-size: 20px;
+              margin-right: 5px;
+            }
+          }
+          .support-wrap {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            .support,
+            .no-support {
+              width: 24px;
+              height: 24px;
+              background: no-repeat center;
+              background-size: 18px;
+              margin-right: 3px;
+            }
+            .support {
+              background-image: url(../../../assets/img/点赞选中@2x.jpg);
+            }
+            .no-support {
+              background-image: url(../../../assets/img/点赞@2x.jpg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.circle-detail-issue {
+  width: 148px;
+  height: 50px;
+  position: fixed;
+  left: 115px;
+  bottom: 40px;
+  border-radius: 24px;
+  background: #fff;
+  .issue-imageandtext,
+  .issue-question {
+    display: inline-block;
+    width: 74px;
+    height: 100%;
+    padding-top: 27px;
+    text-align: center;
+    font-weight: bold;
+    background: no-repeat center 3px;
+    background-size: 24px;
+  }
+  .issue-imageandtext {
+    border-right: 1px solid #eee;
+    background-image: url(../../../assets/img/图文.png);
+  }
+  .issue-question {
+    background-image: url(../../../assets/img/问答.png);
+  }
+}

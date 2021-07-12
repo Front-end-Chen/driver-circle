@@ -1,0 +1,227 @@
+.circle-detail-wrap {
+  margin-top: 45px;
+}
+.circle-detail-wrap .circle-profile {
+  height: 110px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 6px solid #f4f5f6;
+}
+.circle-detail-wrap .circle-profile .left {
+  width: 245px;
+}
+.circle-detail-wrap .circle-profile .left .circle-name {
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.circle-detail-wrap .circle-profile .left .left-mid {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+.circle-detail-wrap .circle-profile .left .left-mid .circle-leader {
+  margin-right: 8px;
+}
+.circle-detail-wrap .circle-profile .left .left-mid .circle-leader-img {
+  margin-right: 15px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+.circle-detail-wrap .circle-profile .left .left-mid .avatar-list {
+  margin-right: 12px;
+}
+.circle-detail-wrap .circle-profile .left .left-mid .avatar-list img {
+  width: 16px;
+  height: 16px;
+  margin-right: -4px;
+  border-radius: 50%;
+}
+.circle-detail-wrap .circle-profile .left .circle-intro {
+  display: inline-block;
+  width: 100%;
+}
+.circle-detail-wrap .circle-profile .right {
+  width: 114px;
+  height: 74px;
+  line-height: 74px;
+  text-align: right;
+}
+.circle-detail-wrap .circle-profile .right .join,
+.circle-detail-wrap .circle-profile .right .no-join {
+  font-size: 14px;
+  width: 75px;
+  height: 28px;
+  text-align: center;
+  line-height: 28px;
+  border-radius: 16px;
+}
+.circle-detail-wrap .circle-profile .right .join {
+  color: #9f9f9f;
+  background: #f4f5f6;
+}
+.circle-detail-wrap .circle-profile .right .no-join {
+  background: #ffe100;
+}
+.circle-detail-wrap .tab-bar {
+  padding-left: 16px;
+}
+.circle-detail-wrap .tab-bar button {
+  height: 45px;
+  font-size: 16px;
+  margin-right: 20px;
+}
+.circle-detail-wrap .tab-bar .active {
+  font-weight: bold;
+  border-bottom: 3px solid #333;
+}
+.circle-detail-wrap .tab-bar .no-active {
+  font-weight: normal;
+  border-bottom: 0;
+}
+.circle-detail-wrap .posts .item {
+  padding: 20px;
+  border-bottom: 1px solid #f6f6f6;
+}
+.circle-detail-wrap .posts .item .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 36px;
+}
+.circle-detail-wrap .posts .item .head .left-info {
+  display: flex;
+  height: 100%;
+}
+.circle-detail-wrap .posts .item .head .left-info img {
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+.circle-detail-wrap .posts .item .head .left-info .post-head {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.circle-detail-wrap .posts .item .head .left-info .post-head .name {
+  font-size: 14px;
+  font-weight: bold;
+}
+.circle-detail-wrap .posts .item .head .left-info .post-head .post-time {
+  color: #999;
+}
+.circle-detail-wrap .posts .item .head .no-follow {
+  height: 28px;
+  padding: 6px 18px;
+  background: #ffe100;
+  border-radius: 14px;
+  font-weight: bold;
+}
+.circle-detail-wrap .posts .item .head .follow {
+  height: 28px;
+  padding: 6px 18px;
+  font-weight: bold;
+  color: #9f9f9f;
+  background: #f4f5f6;
+  border-radius: 14px;
+}
+.circle-detail-wrap .posts .item .post-content {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 24px;
+}
+.circle-detail-wrap .posts .item .post-imglist {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.circle-detail-wrap .posts .item .post-imglist img {
+  width: 33%;
+  max-height: 200px;
+  margin-right: 2px;
+}
+.circle-detail-wrap .posts .item .bottom {
+  height: 26px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.circle-detail-wrap .posts .item .bottom .bottom-carcircle {
+  height: 100%;
+  padding-left: 25px;
+  padding-right: 10px;
+  line-height: 26px;
+  background: url(../../../assets/img/车友圈@2x.png) no-repeat 5px;
+  background-color: #f4f5f6;
+  background-size: 16px;
+  border-radius: 4px;
+}
+.circle-detail-wrap .posts .item .bottom .bottom-handle {
+  display: flex;
+  height: 100%;
+}
+.circle-detail-wrap .posts .item .bottom .bottom-handle .comment-wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+.circle-detail-wrap .posts .item .bottom .bottom-handle .comment-wrap .comment {
+  width: 24px;
+  height: 24px;
+  background: url(../../../assets/img/评论@2x.png) no-repeat center;
+  background-size: 20px;
+  margin-right: 5px;
+}
+.circle-detail-wrap .posts .item .bottom .bottom-handle .support-wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.circle-detail-wrap .posts .item .bottom .bottom-handle .support-wrap .support,
+.circle-detail-wrap .posts .item .bottom .bottom-handle .support-wrap .no-support {
+  width: 24px;
+  height: 24px;
+  background: no-repeat center;
+  background-size: 18px;
+  margin-right: 3px;
+}
+.circle-detail-wrap .posts .item .bottom .bottom-handle .support-wrap .support {
+  background-image: url(../../../assets/img/点赞选中@2x.jpg);
+}
+.circle-detail-wrap .posts .item .bottom .bottom-handle .support-wrap .no-support {
+  background-image: url(../../../assets/img/点赞@2x.jpg);
+}
+.circle-detail-issue {
+  width: 148px;
+  height: 50px;
+  position: fixed;
+  left: 115px;
+  bottom: 40px;
+  border-radius: 24px;
+  background: #fff;
+}
+.circle-detail-issue .issue-imageandtext,
+.circle-detail-issue .issue-question {
+  display: inline-block;
+  width: 74px;
+  height: 100%;
+  padding-top: 27px;
+  text-align: center;
+  font-weight: bold;
+  background: no-repeat center 3px;
+  background-size: 24px;
+}
+.circle-detail-issue .issue-imageandtext {
+  border-right: 1px solid #eee;
+  background-image: url(../../../assets/img/图文.png);
+}
+.circle-detail-issue .issue-question {
+  background-image: url(../../../assets/img/问答.png);
+}
+/*# sourceMappingURL=./index.css.map */

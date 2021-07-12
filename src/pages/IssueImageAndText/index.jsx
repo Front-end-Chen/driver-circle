@@ -1,6 +1,6 @@
 import React, { memo, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { TextareaItem, ImagePicker, Button, Modal } from "antd-mobile";
+import { TextareaItem, ImagePicker, Modal } from "antd-mobile";
 import Header from "@comp/Header";
 import PicturesWall from "@comp/PicturesWall";
 import { ISSUE } from "@/common/title";

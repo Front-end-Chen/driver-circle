@@ -23,7 +23,7 @@
 .info-list .item .right-info .info-content {
   margin: 10px 0;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 25px;
   color: #222;
 }
 .info-list .item .right-info .info-date {
@@ -51,13 +51,13 @@
   align-items: center;
 }
 .null-list .null-pic {
-  widows: 150px;
+  width: 150px;
   height: 150px;
 }
 .null-list .null-info {
   height: 60px;
   color: #999;
-  font-size: 13px;
+  font-size: 14px;
   text-align: center;
   line-height: 60px;
 }
