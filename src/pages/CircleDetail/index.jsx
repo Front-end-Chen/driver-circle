@@ -323,8 +323,8 @@ export default memo(function CircleDetail() {
         </Tabs>
       </div>
       <div className="circle-detail-issue">
-        <Link to="/issueimageandtext" className="issue-imageandtext">图文</Link>
-        <Link to="/issuequestion" className="issue-question">问答</Link>
+        <Link to="/issue/imgtext" className="issue-imageandtext">图文</Link>
+        <Link to="/issue/qa" className="issue-question">问答</Link>
       </div>
     </>
   );

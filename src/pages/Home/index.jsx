@@ -39,6 +39,7 @@ export default memo(function Home(props) {
     e.target.className = isFollow ? "no-follow" : "follow";
     setIsFollow(!isFollow);
   };
+
   //帖子点赞按钮的回调
   const support = e => {
     e.target.className = isSupport ? "no-support" : "support";
@@ -54,13 +55,13 @@ export default memo(function Home(props) {
   //模态框图文按钮的回调
   const issueImageAndText = () => {
     setIsVisible(false);
-    props.history.push("/issueimageandtext");
+    props.history.push("/issue/imgtext");
   };
 
   //模态框问答按钮的回调
   const issueQuestion = () => {
     setIsVisible(false);
-    props.history.push("/issuequestion");
+    props.history.push("/issue/qa");
   };
 
   return (
@@ -174,6 +175,76 @@ export default memo(function Home(props) {
                   <span>2314</span>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="item">
+            <div className="head">
+              <div className="left-info">
+                <img src={img5} alt="" />
+                <div className="post-head">
+                  <span className="name">牧林</span>
+                  <span className="post-time">4小时前</span>
+                </div>
+              </div>
+              <button className="no-follow" onClick={followPostAuthor}>
+                关注
+              </button>
+            </div>
+            <Link to="/qa/67709540" className="post-link">
+              <p className="post-content">
+                问题：怎样才算闯红灯？后轮刚过线就变红灯，是该走还是该停？
+              </p>
+              <div className="post-imglist">
+                <img src={img2} alt="" />
+                <img src={img3} alt="" />
+                {/* <img src={img3} alt="" /> */}
+              </div>
+            </Link>
+            <div className="bottom-qa">
+              <span className="reply-num">2回答</span>
+            </div>
+          </div>
+          <div className="item">
+            <div className="head">
+              <div className="left-info">
+                <img src={img5} alt="" />
+                <div className="post-head">
+                  <span className="name">牧林</span>
+                  <span className="post-time">4小时前</span>
+                </div>
+              </div>
+              <button className="no-follow" onClick={followPostAuthor}>
+                关注
+              </button>
+            </div>
+            <Link to="/qa/67709540" className="post-link">
+              <p className="post-content">
+                问题: 为什么长途司机宁愿在高速口排队，也不愿意办理ETC？
+              </p>
+              {/* <div className="post-imglist">
+                <img src={img1} alt="" />
+                <img src={img2} alt="" />
+                <img src={img3} alt="" />
+              </div> */}
+            </Link>
+            <div className="bottom-qa">
+              <span className="solve">已解决</span>
+              <span className="reply-num">2回答</span>
+            </div>
+            <div className="best-reply">
+              <div className="head">
+                <div className="left-info">
+                  <img src={img6} alt="" />
+                  <div className="post-head">
+                    <span className="name">牧林</span>
+                    <span className="post-time">4小时前</span>
+                  </div>
+                </div>
+              </div>
+              <p className="post-content">
+                怎样拍照闯红灯、超速电子眼工作原理:1、电子眼采用感应线来感应路面上的汽车传来的压力，通过传感器将信号采集到中央处理器，送寄存器暂存（该数…
+              </p>
+              <span className="best-reply-img"></span>
             </div>
           </div>
           <div className="item">

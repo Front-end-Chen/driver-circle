@@ -6,7 +6,7 @@ import PicturesWall from "@comp/PicturesWall";
 import { ISSUE } from "@/common/title";
 import "./css/index.less";
 
-export default memo(function IssueImageAndText(props) {
+export default memo(function Issue(props) {
   //保存输入的内容
   const [content, setContent] = useState("");
   //模态框显示标记

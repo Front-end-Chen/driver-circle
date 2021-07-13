@@ -90,13 +90,7 @@
       }
     }
   }
-
   .posts {
-    // overflow: auto;
-    // /*设置滚动条隐藏*/
-    // &::-webkit-scrollbar {
-    //   display: none;
-    // }
     .item {
       // box-sizing: border-box;
       // width: 100%;
@@ -157,7 +151,7 @@
         .post-imglist {
           // width: 100%;
           display: flex;
-          justify-content: space-between;
+          // justify-content: space-between;
           margin-top: 10px;
           img {
             width: 33%;
@@ -216,6 +210,72 @@
               background-image: url(../../../assets/img/点赞@2x.jpg);
             }
           }
+        }
+      }
+      .bottom-qa {
+        height: 26px;
+        display: flex;
+        margin-top: 10px;
+        .solve {
+          margin-right: 10px;
+          font-size: 13px;
+          color: #32b95d;
+          font-weight: bold;
+        }
+        .reply-num {
+          font-size: 13px;
+          color: #999;
+        }
+      }
+      .best-reply {
+        padding: 10px;
+        margin-top: 10px;
+        position: relative;
+        background: #f4f5f6;
+        border-radius: 4px;
+        .head {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 36px;
+          .left-info {
+            display: flex;
+            height: 100%;
+            img {
+              width: 36px;
+              height: 36px;
+              margin-right: 8px;
+              border-radius: 50%;
+            }
+            .post-head {
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              .name {
+                font-size: 14px;
+                font-weight: bold;
+              }
+              .post-time {
+                color: #999;
+              }
+            }
+          }
+        }
+        .post-content {
+          // width: 100%;
+          margin-top: 10px;
+          font-size: 14px;
+          line-height: 24px;
+        }
+        .best-reply-img {
+          position: absolute;
+          width: 68px;
+          height: 29px;
+          top: -5px;
+          right: -5px;
+          background: url(../../../assets/img/bestsolution_tag@2x.png) no-repeat;
+          background-size: 68px;
         }
       }
     }

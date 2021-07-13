@@ -146,7 +146,6 @@
 }
 .home .posts .item .post-link .post-imglist {
   display: flex;
-  justify-content: space-between;
   margin-top: 10px;
 }
 .home .posts .item .post-link .post-imglist img {
@@ -205,6 +204,71 @@
 }
 .home .posts .item .bottom .bottom-handle .support-wrap .no-support {
   background-image: url(../../../assets/img/点赞@2x.jpg);
+}
+.home .posts .item .bottom-qa {
+  height: 26px;
+  display: flex;
+  margin-top: 10px;
+}
+.home .posts .item .bottom-qa .solve {
+  margin-right: 10px;
+  font-size: 13px;
+  color: #32b95d;
+  font-weight: bold;
+}
+.home .posts .item .bottom-qa .reply-num {
+  font-size: 13px;
+  color: #999;
+}
+.home .posts .item .best-reply {
+  padding: 10px;
+  margin-top: 10px;
+  position: relative;
+  background: #f4f5f6;
+  border-radius: 4px;
+}
+.home .posts .item .best-reply .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 36px;
+}
+.home .posts .item .best-reply .head .left-info {
+  display: flex;
+  height: 100%;
+}
+.home .posts .item .best-reply .head .left-info img {
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+.home .posts .item .best-reply .head .left-info .post-head {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.home .posts .item .best-reply .head .left-info .post-head .name {
+  font-size: 14px;
+  font-weight: bold;
+}
+.home .posts .item .best-reply .head .left-info .post-head .post-time {
+  color: #999;
+}
+.home .posts .item .best-reply .post-content {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 24px;
+}
+.home .posts .item .best-reply .best-reply-img {
+  position: absolute;
+  width: 68px;
+  height: 29px;
+  top: -5px;
+  right: -5px;
+  background: url(../../../assets/img/bestsolution_tag@2x.png) no-repeat;
+  background-size: 68px;
 }
 .home .issue {
   width: 50px;

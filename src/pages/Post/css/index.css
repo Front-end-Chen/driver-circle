@@ -57,7 +57,6 @@
 }
 .post-wrap .post .item .post-imglist {
   display: flex;
-  justify-content: space-between;
   margin-top: 10px;
 }
 .post-wrap .post .item .post-imglist img {

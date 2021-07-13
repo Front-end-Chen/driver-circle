@@ -7,3 +7,4 @@ export const MYCOMMENT = "我的评论";
 export const ISSUE = "发布"
 export const CHECKCIRCLE = "选择车圈"
 export const POST = "帖子详情"
+export const QA = "问答详情"
