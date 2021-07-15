@@ -9,6 +9,7 @@
     "antd": "^4.16.6",
     "antd-mobile": "^2.3.4",
     "axios": "^0.21.1",
+    "dayjs": "^1.10.6",
     "lib-flexible": "^0.3.2",
     "normalize.css": "^8.0.1",
     "postcss-px2rem": "^0.3.0",
@@ -25,7 +26,8 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mockserver": "npx json-server --watch --port 3001 ./src/mock-data/db.json"
   },
   "eslintConfig": {
     "extends": [
@@ -48,9 +50,11 @@
   "devDependencies": {
     "babel-plugin-import": "^1.13.3",
     "customize-cra": "^1.0.0",
+    "json-server": "^0.16.3",
     "less": "^4.1.1",
     "less-loader": "7.1",
     "react-app-rewired": "^2.1.8",
     "redux-devtools-extension": "^2.13.9"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }

@@ -1,0 +1,189 @@
+.posts {
+  .item {
+    padding: 20px;
+    border-bottom: 1px solid #f6f6f6;
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 36px;
+      .left-info {
+        display: flex;
+        height: 100%;
+        img {
+          width: 36px;
+          height: 36px;
+          margin-right: 8px;
+          border-radius: 50%;
+        }
+        .post-head {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .name {
+            font-size: 14px;
+            font-weight: bold;
+          }
+          .post-time {
+            color: #999;
+          }
+        }
+      }
+      .no-follow, .follow {
+        height: 28px;
+        padding: 6px 18px;
+        border-radius: 14px;
+        font-weight: bold;
+      }
+      .no-follow {
+        background: #ffe100;
+      }
+      .follow {
+        color: #9f9f9f;
+        background: #f4f5f6;
+      }
+    }
+    .post-link {
+      display: block;
+      .post-content {
+        margin-top: 10px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .post-imglist {
+        display: flex;
+        // width: 100%;
+        margin-top: 10px;
+        .img-three {
+          width: 33%;
+          max-height: 200px;
+          margin-right: 2px;
+        }
+        .img-two {
+            width: 49%;
+            max-height: 200px;
+            margin-right: 2px;
+          }
+      }
+    }
+    .bottom {
+      height: 26px;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      .bottom-carcircle {
+        height: 100%;
+        padding-left: 25px;
+        padding-right: 10px;
+        line-height: 26px;
+        background: url(../../../assets/img/车友圈@2x.png) no-repeat 5px;
+        background-color: #f4f5f6;
+        background-size: 16px;
+        border-radius: 4px;
+      }
+      .bottom-handle {
+        display: flex;
+        height: 100%;
+        .comment-wrap {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          margin-right: 16px;
+          .comment {
+            width: 24px;
+            height: 24px;
+            background: url(../../../assets/img/评论@2x.png) no-repeat center;
+            background-size: 20px;
+            margin-right: 5px;
+          }
+        }
+        .support-wrap {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          .support,
+          .no-support {
+            width: 24px;
+            height: 24px;
+            background: no-repeat center;
+            background-size: 18px;
+            margin-right: 3px;
+          }
+          .support {
+            background-image: url(../../../assets/img/点赞选中@2x.jpg);
+          }
+          .no-support {
+            background-image: url(../../../assets/img/点赞@2x.jpg);
+          }
+        }
+      }
+    }
+    .bottom-qa {
+      height: 26px;
+      display: flex;
+      margin-top: 10px;
+      .solve {
+        margin-right: 10px;
+        font-size: 13px;
+        color: #32b95d;
+        font-weight: bold;
+      }
+      .reply-num {
+        font-size: 13px;
+        color: #999;
+      }
+    }
+    .best-reply {
+      padding: 10px;
+      margin-top: 10px;
+      position: relative;
+      background: #f4f5f6;
+      border-radius: 4px;
+      .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 36px;
+        .left-info {
+          display: flex;
+          height: 100%;
+          img {
+            width: 36px;
+            height: 36px;
+            margin-right: 8px;
+            border-radius: 50%;
+          }
+          .post-head {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .name {
+              font-size: 14px;
+              font-weight: bold;
+            }
+            .post-time {
+              color: #999;
+            }
+          }
+        }
+      }
+      .post-content {
+        // width: 100%;
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 24px;
+      }
+      .best-reply-img {
+        position: absolute;
+        width: 68px;
+        height: 29px;
+        top: -5px;
+        right: -5px;
+        background: url(../../../assets/img/bestsolution_tag@2x.png) no-repeat;
+        background-size: 68px;
+      }
+    }
+  }
+}

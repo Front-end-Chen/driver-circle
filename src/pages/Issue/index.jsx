@@ -1,5 +1,6 @@
 import React, { memo, useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import { shallowEqual, useSelector } from "react-redux";
 import { TextareaItem, ImagePicker, Modal } from "antd-mobile";
 import Header from "@comp/Header";
 import PicturesWall from "@comp/PicturesWall";
@@ -22,6 +23,10 @@ export default memo(function Issue(props) {
   //保存文件的列表
   const [files, setFiles] = useState(data);
   // const pictureWallRef = useRef();
+
+  //将redux中的state映射到组件中
+  const checkcircle = useSelector(state => state.circlesInfo.checkcircle, shallowEqual);
+
   //保存输入内容的回调
   const saveInput = val => {
     console.log(val);
@@ -71,7 +76,7 @@ export default memo(function Issue(props) {
       <div className="issue-bottom">
         <Link to="/checkcircle" className="left">
           <span className="icon-left"></span>
-          <span className="check-circle">选择车圈</span>
+          <span className="check-circle">{ checkcircle.circlename ? checkcircle.circlename : "选择车圈"}</span>
           <span className="icon-right"></span>
         </Link>
         <div className="right">

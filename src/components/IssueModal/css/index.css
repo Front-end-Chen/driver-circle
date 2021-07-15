@@ -1,0 +1,42 @@
+.home-issue {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 76px;
+  right: 16px;
+  background: #ffe100;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.modal-home {
+  width: 130px;
+  position: absolute;
+  bottom: 140px;
+  right: 18px;
+}
+.modal-home .am-modal-content {
+  padding: 0;
+}
+.modal-home .am-modal-content .am-modal-body {
+  padding: 0;
+}
+.modal-home .issue-imageandtext,
+.modal-home .issue-question {
+  color: #333;
+  height: 55px;
+  line-height: 55px;
+  font-size: 20px;
+  padding-left: 34px;
+  font-weight: bold;
+  background: no-repeat 20px center;
+  background-size: 26px;
+}
+.modal-home .issue-imageandtext {
+  background-image: url(../../../assets/img/图文.png);
+}
+.modal-home .issue-question {
+  background-image: url(../../../assets/img/问答.png);
+}
+/*# sourceMappingURL=./index.css.map */

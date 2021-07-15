@@ -1,4 +1,5 @@
 import React, { memo, useState } from "react";
+import { Link } from "react-router-dom";
 import Header from "@comp/Header";
 import "./css/index.less";
 import img1 from "../../assets/img/1.jpg";
@@ -8,7 +9,6 @@ import img4 from "../../assets/img/用户2.jpeg";
 import img5 from "../../assets/img/mountain_pic@2x.png";
 import img6 from "../../assets/img/用户4.jpg";
 import { QA } from "@/common/title";
-import { Link } from "react-router-dom";
 
 export default memo(function QuestionsAndAnswers() {
   //帖子关注按钮标记
