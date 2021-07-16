@@ -11,7 +11,7 @@ export const savePosts = posts => ({
 export const getAsycPosts = () => {
   return dispatch => {
     getPosts().then(result => {
-      dispatch(savePosts(result));
+      dispatch(savePosts(result.reverse()));
     });
   };
 };

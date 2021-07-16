@@ -3,14 +3,14 @@ import { Upload, Modal } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 
 //将图片变成base64编码形式
-function getBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
-  });
-}
+// function getBase64(file) {
+//   return new Promise((resolve, reject) => {
+//     const reader = new FileReader();
+//     reader.readAsDataURL(file);
+//     reader.onload = () => resolve(reader.result);
+//     reader.onerror = error => reject(error);
+//   });
+// }
 
 export default memo(function PicturesWall() {
   //收集好的所有上传完毕的图片名

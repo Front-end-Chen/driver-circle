@@ -4,7 +4,7 @@ import { Form, Input, Button } from "antd";
 import { Toast } from "antd-mobile";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import Header from "@comp/Header";
-import { getUserInfo } from "@/api";
+import { getUserInfo, postUserInfo } from "@/api";
 import { saveUserInfo } from "@/redux/actions/user";
 import "./css/index.less";
 import { LOGIN } from "@/common/title";
@@ -22,9 +22,9 @@ export default memo(function Login(props) {
     if (result.length) {
       const { password, username } = result[0];
       if (values.password === password) {
+        dispatch(saveUserInfo(result[0]));
         localStorage.setItem("isLogin", true);
         localStorage.setItem("username", username);
-        dispatch(saveUserInfo(result[0]));
         Toast.success("登录成功！", 1.5);
         setTimeout(() => {
           props.history.replace("/home");
@@ -41,10 +41,16 @@ export default memo(function Login(props) {
       let joincirclesid = [],
         commentposts = [],
         issueposts = [];
-      let user = { ...values, ico, joincirclesid, commentposts, issueposts };
+      let user = { ...values, ico, profile, joincirclesid, commentposts, issueposts };
+      console.log(user);
       const result = await postUserInfo(user);
-      console.log(result);
       dispatch(saveUserInfo(result));
+      localStorage.setItem("isLogin", true);
+      localStorage.setItem("username", values.username);
+      Toast.success("登录成功！", 1.5);
+      setTimeout(() => {
+        props.history.replace("/home");
+      }, 550);
     }
   };
 

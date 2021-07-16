@@ -3,12 +3,12 @@ import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import TabFooter from "@comp/TabFooter";
 import Header from "@comp/Header";
-import { getAsycUserInfo } from "@/redux/actions/user";
+import { getAsycUserInfo, deleteUserInfo } from "@/redux/actions/user";
 import "./css/index.less";
 import arrow from "../../assets/img/arrow_ic.png";
 import { MYPROFILE } from "@/common/title";
 
-export default memo(function MyProfile() {
+export default memo(function MyProfile(props) {
   const dispatch = useDispatch();
   //从redux中获取user信息
   let user = useSelector(state => state.user, shallowEqual);
@@ -24,16 +24,25 @@ export default memo(function MyProfile() {
   //防闪屏同时避免报错，为空直接返回空元素
   if (JSON.stringify(user) === "{}") return <></>;
 
+  //退出登录按钮回调
+  const exit = () => {
+    //清除localStorage数据并跳转到首页
+    localStorage.removeItem("isLogin");
+    localStorage.removeItem("username");
+    dispatch(deleteUserInfo());
+    props.history.replace("/home");
+  };
+
   const MyProfile = (
     <>
       <Header title={MYPROFILE} />
       <div className="myprofile">
         <div className="profile">
-          <img src={user.ico} alt="" />
+          <img src={user.ico || ""} alt="" />
           <div>
-            <header className="name">{user.username}</header>
+            <header className="name">{user.username || ""}</header>
             <p>
-              {user.profile}
+              {user.profile || ""}
               <button className="modify"></button>
             </p>
           </div>
@@ -51,11 +60,14 @@ export default memo(function MyProfile() {
         <Link to="/login" className="switch-accounts">
           切换账号
         </Link>
+        <button className="exit" onClick={exit}>
+          退出
+        </button>
       </div>
       <TabFooter />
     </>
   );
-
+  //从localStorage中读取登录标记判断是否登录
   const isLogin = localStorage.getItem("isLogin");
   return isLogin ? MyProfile : <Redirect to="/login" />;
 });

@@ -20,9 +20,14 @@ export const getPostsByCID = cid => {
   return request.get("/posts", { params: { cid } });
 };
 
+//通过帖子ID，给帖子添加评论
+export const issueCommentByPostID = post => {
+  return request.put(`/posts/${post.id}`, { ...post });
+};
+
 //发布帖子
-export const issuePost = post => {
-  return request.post("/posts", { post });
+export const issuePosts = post => {
+  return request.post("/posts", { ...post });
 };
 
 //模拟登录
@@ -32,5 +37,5 @@ export const getUserInfo = username => {
 
 //模拟注册
 export const postUserInfo = user => {
-  return request.post("/users", { user });
+  return request.post("/users", { ...user });
 };

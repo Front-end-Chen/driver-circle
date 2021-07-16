@@ -12,3 +12,6 @@ export const SAVE_POSTS = 'save_posts';
 
 //保存登录用户信息
 export const SAVE_USER_INFO = 'save_user_info';
+
+//删除登录用户信息
+export const DELETE_USER_INFO = 'delete_user_info';

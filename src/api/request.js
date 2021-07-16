@@ -1,5 +1,5 @@
 import axios from "axios";
-import qs from "querystring";
+// import qs from "querystring";
 import { Toast } from "antd-mobile";
 import { BASE_URL, TIME_OUT } from "../common/config";
 
@@ -12,16 +12,17 @@ const instance = axios.create({
 //axios默认发送post请求时是以json格式，此处处理转换成urlencoded形式
 //请求拦截器
 instance.interceptors.request.use(config => {
-  // console.log(config);
 
   //从配置对象中获取method和data
-  const { method, data } = config;
-  if (method.toLowerCase() === "post") {
-    //若传递过来的参数是对象，转换成urlencoded形式
-    if (data instanceof Object) {
-      config.data = qs.stringify(data);
-    }
-  }
+  // const { method, data } = config;
+
+  //使用urlencoded形式的body参数
+  // if (method.toLowerCase() === "post") {
+     //若传递过来的参数是对象，转换成urlencoded形式
+  //   if (data instanceof Object) {
+  //     config.data = qs.stringify(data);
+  //   }
+  // }
   return config;
 });
 

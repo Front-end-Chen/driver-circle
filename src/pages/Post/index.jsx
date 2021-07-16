@@ -92,7 +92,7 @@ export default memo(function Post(props) {
             : ""}
         </div>
       </div>
-      <IssueComment />
+      <IssueComment post={checkpost}/>
     </>
   );
 });

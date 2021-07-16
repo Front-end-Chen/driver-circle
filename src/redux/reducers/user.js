@@ -1,4 +1,4 @@
-import { SAVE_USER_INFO } from "../action_types";
+import { SAVE_USER_INFO, DELETE_USER_INFO } from "../action_types";
 
 //初始化用户登录信息
 let user = {};
@@ -10,6 +10,10 @@ export default function userReducer(preState = user, action) {
     case SAVE_USER_INFO:
       newState = { ...user };
       return newState;
+    case DELETE_USER_INFO:
+      newState = {};
+      return newState;
+
     default:
       return preState;
   }

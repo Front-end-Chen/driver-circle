@@ -15,24 +15,26 @@ export default memo(function PostItem(props) {
   const handleImgtext = () => {
     const { supportnum, commentnum, imgs } = props.post;
     const circle = props.circles.find(circle => {
-      return circle.id === cid;
+      return circle.id === cid * 1;
     });
     const toLink = (
       <Link to={`/post/${id}`} className="post-link">
         <p className="post-content">{content}</p>
         <div className="post-imglist">
-          {imgs.length === 0
-            ? ""
-            : imgs.map(img => {
-                return (
-                  <img
-                    className={imgs.length === 3 ? "img-three" : "img-two"}
-                    key={img}
-                    src={img}
-                    alt=""
-                  />
-                );
-              })}
+          {imgs
+            ? imgs.length === 0
+              ? ""
+              : imgs.map(img => {
+                  return (
+                    <img
+                      className={imgs.length === 3 ? "img-three" : "img-two"}
+                      key={img}
+                      src={img}
+                      alt=""
+                    />
+                  );
+                })
+            : ""}
         </div>
       </Link>
     );
@@ -41,18 +43,20 @@ export default memo(function PostItem(props) {
       <div className="post-link">
         <p className="post-content">{content}</p>
         <div className="post-imglist">
-          {imgs.length === 0
-            ? ""
-            : imgs.map(img => {
-                return (
-                  <img
-                    className={imgs.length === 3 ? "img-three" : "img-two"}
-                    key={img}
-                    src={img}
-                    alt=""
-                  />
-                );
-              })}
+          {imgs
+            ? imgs.length === 0
+              ? ""
+              : imgs.map(img => {
+                  return (
+                    <img
+                      className={imgs.length === 3 ? "img-three" : "img-two"}
+                      key={img}
+                      src={img}
+                      alt=""
+                    />
+                  );
+                })
+            : ""}
         </div>
       </div>
     );
@@ -93,7 +97,9 @@ export default memo(function PostItem(props) {
               <img src={bestreply.issueico} alt="" />
               <div className="post-head">
                 <span className="name">{bestreply.username}</span>
-                <span className="post-time">{dayjs(bestreply.replydate).format("MM-DD HH:mm")}</span>
+                <span className="post-time">
+                  {dayjs(bestreply.replydate).format("MM-DD HH:mm")}
+                </span>
               </div>
             </div>
           </div>
