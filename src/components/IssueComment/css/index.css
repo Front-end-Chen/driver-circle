@@ -1,0 +1,30 @@
+.issue-comment-wrap {
+  width: 100%;
+  padding: 5px 16px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-top: 2px solid #eee;
+}
+.issue-comment-wrap .issue-content {
+  width: 280px;
+  height: 40px;
+  font-size: 15px;
+  padding: 5px 15px;
+  background: #f4f5f6;
+  border-radius: 16px;
+}
+.issue-comment-wrap .issue-comment {
+  width: 64px;
+  height: 45px;
+  color: #3296fa;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 45px;
+}
+/*# sourceMappingURL=./index.css.map */

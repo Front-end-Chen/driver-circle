@@ -195,6 +195,7 @@
       "issuedate": 1626253615632,
       "replynum": 2,
       "cid": 1,
+      "solved": false,
       "issueuserinfo": {
         "id": 3,
         "username": "念念不忘，必有回响",
@@ -226,8 +227,9 @@
     {
       "id": 1,
       "username": "长风199",
+      "password": "123456",
       "ico": "https://sf1-cdn-tos.toutiaostatic.com/img/user-avatar/f5603c9b27d6cce044c09e14a32f7d4a~300x300.image",
-      "profile": "简介：这个人很懒，什么都没写~这个人很懒，什么都没写~这个人很懒，什么都没写~",
+      "profile": "简介：这个人很懒，什么都没写~这个人很懒，什么都没写~什么都没写~",
       "joincirclesid": [1, 2],
       "issueposts": [
         {
@@ -235,8 +237,17 @@
           "type": "imgtext",
           "content": "各位大神们，想请教各位我是去年10月买的特斯拉 Model S，近段时间总出现蓄电池电量过低，是怎么回事，我是很少开，一个星期有时开一次或两次，这是不是我车电池有问题，查又查不出问题来，一个新车不到一年应该不会出现这种问题吧，请告知，谢谢。",
           "issuedate": 1626250805632,
+          "commentnum": 0,
           "cid": 2,
           "previewimg": "https://sf3-ttcdn-tos.pstatp.com/img/tos-cn-i-0000/a2754f4313764d77ae415a6967f68dc4~600x0.png"
+        },
+        {
+          "id": 3,
+          "type": "qa",
+          "content": "你们的车机是不是很容易发烫 我夏天车在外面晒一天 然后我通风开车20分钟 方向盘中控都凉快了 车机背面摸上去还是很烫手 你们遇到过吗",
+          "issuedate": 1626252015632,
+          "replynum": 2,
+          "cid": 1
         }
       ],
       "commentposts": [
@@ -322,6 +333,7 @@
           "type": "imgtext",
           "content": "我想买哈弗h6 三代 四驱次顶配 那个版本 准备五年0首付那个。我想问问各位的落地价格是多少钱，我好去谈一下",
           "issuedate": 1626250805632,
+          "commentnum": 3,
           "cid": 3,
           "previewimg": "https://p1-dcd.byteimg.com/img/tos-cn-i-0000/0479a863a94a4b4ca368d4b0245b1e18~tplv-resize:600:0.jpg"
         }
@@ -340,6 +352,7 @@
           "type": "imgtext",
           "content": "我想知道大家有五月份订车的奥迪A4L45TFSI动感型有提车的嘛，为什么我两个月了车还没有到[抓狂][抓狂][抓狂]急急急！",
           "issuedate": 1626251915632,
+          "commentnum": 2,
           "cid": 1,
           "previewimg": ""
         }
@@ -380,12 +393,6 @@
           "replydate": 1626253125632
         }
       ]
-    }
-  ],
-  "login": [
-    {
-      "id": 1,
-      "login": true
     }
   ]
 }

@@ -1,0 +1,58 @@
+.reply-wrap .reply-list .item {
+  margin-bottom: 19px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.reply-wrap .reply-list .item .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 36px;
+}
+.reply-wrap .reply-list .item .head .left-info {
+  display: flex;
+  height: 100%;
+}
+.reply-wrap .reply-list .item .head .left-info img {
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+.reply-wrap .reply-list .item .head .left-info .post-head {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.reply-wrap .reply-list .item .head .left-info .post-head .name {
+  font-size: 14px;
+  font-weight: bold;
+}
+.reply-wrap .reply-list .item .head .left-info .post-head .post-time {
+  color: #999;
+}
+.reply-wrap .reply-list .item .head .no-best {
+  height: 28px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 2px;
+  padding: 6px 10px;
+  background: #ffe100;
+}
+.reply-wrap .reply-list .item .head .no-show {
+  display: none;
+}
+.reply-wrap .reply-list .item .head .best {
+  width: 68px;
+  height: 28px;
+  padding: 0;
+  background: url(../../../assets/img/bestsolution_tag@2x.png) no-repeat;
+  background-size: 68px;
+}
+.reply-wrap .reply-list .item .post-content {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 24px;
+}
+/*# sourceMappingURL=./index.css.map */

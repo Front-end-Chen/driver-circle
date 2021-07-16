@@ -1,120 +1,107 @@
-import React, { memo, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { memo, useState, useEffect } from "react";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import Header from "@comp/Header";
+import PostItem from "@comp/PostItem";
+import QaIssueBar from "@comp/QaIssueBar";
+import QaCommentItem from "@comp/QaCommentItem";
+import { getAsycPosts } from "@/redux/actions/posts";
 import "./css/index.less";
-import img1 from "../../assets/img/1.jpg";
-import img2 from "../../assets/img/2.jpg";
-import img3 from "../../assets/img/3.jpg";
-import img4 from "../../assets/img/用户2.jpeg";
-import img5 from "../../assets/img/mountain_pic@2x.png";
-import img6 from "../../assets/img/用户4.jpg";
+import nullImg from "../../assets/img/mountain_pic@2x.png";
 import { QA } from "@/common/title";
 
-export default memo(function QuestionsAndAnswers() {
-  //帖子关注按钮标记
-  const [isFollow, setIsFollow] = useState(false);
+export default memo(function QuestionsAndAnswers(props) {
+  //获取路由params参数-传递过来的问答IDqid
+  const { qid } = props.match.params;
+  //缓存选中的问答
+  const [checkpost, setCheckPost] = useState({});
+  //使用useDispatch将dispatch映射到组件中
+  const dispatch = useDispatch();
+  //将redux中的state映射到组件中
+  //获取全部帖子信息
+  const posts = useSelector(state => state.posts, shallowEqual);
 
-  //帖子关注按钮的回调
-  const followPostAuthor = e => {
-    e.target.innerText = isFollow ? "关注" : "已关注";
-    e.target.className = isFollow ? "no-follow" : "follow";
-    setIsFollow(!isFollow);
+  //模拟生命周期进行副作用的操作
+  //如果redux中有数据，查询当前post信息直接使用，否则发请求获取posts信息
+  useEffect(() => {
+    if (posts.length === 0) {
+      dispatch(getAsycPosts());
+      return;
+    }
+    //遍历帖子数组找到选中的帖子信息
+    const checkpost = posts.find(post => {
+      return post.id === qid * 1;
+    });
+    setCheckPost(checkpost);
+  }, [dispatch, posts, qid]);
+
+  //处理回答是否有最佳答案
+  const hasReply = () => {
+    if (checkpost.solved) {
+      return (
+        <div className="reply-list">
+          {/* 注意先判断checkpost.reply是否有值 */}
+          {checkpost.reply
+            ? checkpost.reply.map(re => {
+                return (
+                  <QaCommentItem isSolved={true} key={re.id + 10} reply={re} />
+                );
+              })
+            : ""}
+          <div className="bottom-info">没有更多了</div>
+        </div>
+      );
+    }
+
+    return (
+      <div className="reply-list">
+        {/* 注意先判断checkpost.reply是否有值 */}
+        {checkpost.reply
+          ? checkpost.reply.map(re => {
+              return <QaCommentItem key={re.id + 10} reply={re} />;
+            })
+          : ""}
+        <div className="bottom-info">没有更多了</div>
+      </div>
+    );
   };
+
+  const nullReply = (
+    <div className="null-list">
+      <img className="null-pic" src={nullImg} alt="" />
+      <div className="null-info">暂无回答</div>
+    </div>
+  );
 
   return (
     <>
       <Header title={QA} />
       <div className="qa-wrap">
-        <div className="post">
-          <div className="item">
-            <div className="head">
-              <div className="left-info">
-                <img src={img4} alt="" />
-                <div className="post-head">
-                  <span className="name">九牧林131</span>
-                  <span className="post-time">6小时前</span>
-                </div>
-              </div>
-              <button className="no-follow" onClick={followPostAuthor}>
-                关注
-              </button>
-            </div>
-            <p className="post-content">宝马5系有买了一周的感受吗～</p>
-            <div className="post-imglist">
-              <img src={img1} alt="" />
-              <img src={img2} alt="" />
-            </div>
-          </div>
+        <div className="posts">
+          {/* 注意先判断checkpost是否为空对象 */}
+          {JSON.stringify(checkpost) === "{}" ? (
+            ""
+          ) : (
+            <PostItem
+              noShow={true}
+              noTo={true}
+              key={checkpost.id}
+              post={checkpost}
+            />
+          )}
         </div>
         <div className="reply-wrap">
-          <header className="comment-title">回答（3）</header>
-          <div className="comment-list">
-            <div className="item">
-              <div className="head">
-                <div className="left-info">
-                  <img src={img6} alt="" />
-                  <div className="post-head">
-                    <span className="name">九牧林131</span>
-                    <span className="post-time">6小时前</span>
-                  </div>
-                </div>
-                <button className="no-follow">采纳答案</button>
-              </div>
-              <p className="post-content">
-                #内饰豪华
-                1.就是快，动力随叫随到的电动特点，再者地板电就是能爆发。2.长安cs85内饰官图曝光，为长安旗下轿跑风格全新中型suv，黑红撞色内饰。
-              </p>
-            </div>
-            <div className="item">
-              <div className="head">
-                <div className="left-info">
-                  <img src={img6} alt="" />
-                  <div className="post-head">
-                    <span className="name">九牧林131</span>
-                    <span className="post-time">6小时前</span>
-                  </div>
-                </div>
-                <button className="no-follow">采纳答案</button>
-              </div>
-              <p className="post-content">
-                #内饰豪华
-                1.就是快，动力随叫随到的电动特点，再者地板电就是能爆发。2.长安cs85内饰官图曝光，为长安旗下轿跑风格全新中型suv，黑红撞色内饰。
-              </p>
-            </div>
-            <div className="item">
-              <div className="head">
-                <div className="left-info">
-                  <img src={img6} alt="" />
-                  <div className="post-head">
-                    <span className="name">九牧林131</span>
-                    <span className="post-time">6小时前</span>
-                  </div>
-                </div>
-                <button className="no-follow">采纳答案</button>
-              </div>
-              <p className="post-content">
-                #内饰豪华
-                1.就是快，动力随叫随到的电动特点，再者地板电就是能爆发。2.长安cs85内饰官图曝光，为长安旗下轿跑风格全新中型suv，黑红撞色内饰。
-              </p>
-            </div>
-            <div className="bottom-info">没有更多了</div>
-          </div>
-          <div className="null-list">
-            <img className="null-pic" src={img5} alt="" />
-            <div className="null-info">暂无回答</div>
-          </div>
+          <header className="comment-title">
+            回答（{checkpost.reply ? checkpost.reply.length : ""}）
+          </header>
+          {/* 注意先判断checkpost.reply是否有值 */}
+          {JSON.stringify(checkpost) !== "{}"
+            ? checkpost.reply.length === 0
+              ? nullReply
+              : hasReply()
+            : ""}
         </div>
       </div>
-      <div className="qa-bottom">
-        <Link to="/issue/qa" className="issue">
-          <span className="issue-img"></span>
-          <span>我要提问</span>
-        </Link>
-        <div className="reply">
-          <span className="reply-img"></span>
-          <span>写回答</span>
-        </div>
-      </div>
+      <QaIssueBar />
     </>
   );
 });

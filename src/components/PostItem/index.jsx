@@ -10,32 +10,56 @@ export default memo(function PostItem(props) {
   const [isSupport, setIsSupport] = useState(false);
   //提取公共属性
   const { type, id, issueuserinfo, content, issuedate, cid } = props.post;
+
   //处理图文类型的帖子
   const handleImgtext = () => {
     const { supportnum, commentnum, imgs } = props.post;
     const circle = props.circles.find(circle => {
       return circle.id === cid;
     });
+    const toLink = (
+      <Link to={`/post/${id}`} className="post-link">
+        <p className="post-content">{content}</p>
+        <div className="post-imglist">
+          {imgs.length === 0
+            ? ""
+            : imgs.map(img => {
+                return (
+                  <img
+                    className={imgs.length === 3 ? "img-three" : "img-two"}
+                    key={img}
+                    src={img}
+                    alt=""
+                  />
+                );
+              })}
+        </div>
+      </Link>
+    );
+
+    const noLink = (
+      <div className="post-link">
+        <p className="post-content">{content}</p>
+        <div className="post-imglist">
+          {imgs.length === 0
+            ? ""
+            : imgs.map(img => {
+                return (
+                  <img
+                    className={imgs.length === 3 ? "img-three" : "img-two"}
+                    key={img}
+                    src={img}
+                    alt=""
+                  />
+                );
+              })}
+        </div>
+      </div>
+    );
 
     return (
       <>
-        <Link to={`/post/${id}`} className="post-link">
-          <p className="post-content">{content}</p>
-          <div className="post-imglist">
-            {imgs.length === 0
-              ? ""
-              : imgs.map(img => {
-                  return (
-                    <img
-                      className={imgs.length === 3 ? "img-three" : "img-two"}
-                      key={img}
-                      src={img}
-                      alt=""
-                    />
-                  );
-                })}
-          </div>
-        </Link>
+        {props.noTo ? noLink : toLink}
         <div className="bottom">
           <div className="bottom-carcircle">{circle.circlename}</div>
           <div className="bottom-handle">
@@ -52,6 +76,7 @@ export default memo(function PostItem(props) {
       </>
     );
   };
+
   //处理问答类型的帖子
   const handleQa = () => {
     const { replynum, solved, reply } = props.post;
@@ -60,25 +85,30 @@ export default memo(function PostItem(props) {
       const bestreply = reply.find(item => {
         return item.bestreply;
       });
+
+      const showBestReply = (
+        <div className="best-reply">
+          <div className="head">
+            <div className="left-info">
+              <img src={bestreply.issueico} alt="" />
+              <div className="post-head">
+                <span className="name">{bestreply.username}</span>
+                <span className="post-time">{dayjs(bestreply.replydate).format("MM-DD HH:mm")}</span>
+              </div>
+            </div>
+          </div>
+          <p className="post-content">{bestreply.content}</p>
+          <span className="best-reply-img"></span>
+        </div>
+      );
+
       qaSolved = (
         <>
           <div className="bottom-qa">
             <span className="solve">已解决</span>
             <span className="reply-num">{replynum} 回答</span>
           </div>
-          <div className="best-reply">
-            <div className="head">
-              <div className="left-info">
-                <img src={bestreply.issueico} alt="" />
-                <div className="post-head">
-                  <span className="name">{bestreply.username}</span>
-                  <span className="post-time">{bestreply.replydate}</span>
-                </div>
-              </div>
-            </div>
-            <p className="post-content">{bestreply.content}</p>
-            <span className="best-reply-img"></span>
-          </div>
+          {props.noShow ? "" : showBestReply}
         </>
       );
     }
@@ -89,11 +119,25 @@ export default memo(function PostItem(props) {
       </div>
     );
 
+    const toLink = (
+      <Link to={`/qa/${id}`} className="post-link">
+        <p className="post-content">
+          <strong>问题:</strong> {content}
+        </p>
+      </Link>
+    );
+
+    const noLink = (
+      <div className="post-link">
+        <p className="post-content">
+          <strong>问题:</strong> {content}
+        </p>
+      </div>
+    );
+
     return (
       <>
-        <Link to={`/qa/${id}`} className="post-link">
-          <p className="post-content"><strong>问题:</strong> {content}</p>
-        </Link>
+        {props.noTo ? noLink : toLink}
         {solved ? qaSolved : qaNoSolved}
       </>
     );
@@ -119,7 +163,9 @@ export default memo(function PostItem(props) {
           <img src={issueuserinfo.ico} alt="" />
           <div className="post-head">
             <span className="name">{issueuserinfo.username}</span>
-            <span className="post-time">{dayjs(issuedate).format('MM-DD HH:mm')}</span>
+            <span className="post-time">
+              {dayjs(issuedate).format("MM-DD HH:mm")}
+            </span>
           </div>
         </div>
         <button className="no-follow" onClick={followPostAuthor}>

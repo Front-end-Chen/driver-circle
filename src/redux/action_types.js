@@ -9,3 +9,6 @@ export const SAVE_CHECK_CIRCLE = 'save_check_circle';
 
 //保存首页全部帖子信息
 export const SAVE_POSTS = 'save_posts';
+
+//保存登录用户信息
+export const SAVE_USER_INFO = 'save_user_info';

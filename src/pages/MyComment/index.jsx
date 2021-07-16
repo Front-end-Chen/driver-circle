@@ -1,68 +1,55 @@
-import React, { memo } from "react";
-import { Modal } from "antd-mobile";
+import React, { memo, useEffect } from "react";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import Header from "@comp/Header";
+import MyCommentItem from "@comp/MyCommentItem";
+import { getAsycUserInfo } from "@/redux/actions/user";
 import "./css/index.less";
 import { MYCOMMENT } from "@/common/title";
-import img1 from "../../assets/img/用户1.jpeg";
-import img2 from "../../assets/img/empty_pic@2x.png";
-
-const alert = Modal.alert;
+import nullImg from "../../assets/img/empty_pic@2x.png";
 
 export default memo(function MyComment() {
-  const deleteItem = () => {
-    alert("确认要删除该条内容吗？", "", [
-      {
-        text: "取消",
-        onPress: () => console.log("cancel"),
-        style: { color: "#3296FA" },
-      },
-      {
-        text: "删除",
-        onPress: () => console.log("ok"),
-        style: { color: "#F85959" },
-      },
-    ]);
-  };
+  const dispatch = useDispatch();
+  //从redux中获取user信息
+  let user = useSelector(state => state.user, shallowEqual);
+
+  useEffect(() => {
+    //刷新丢失user信息，从localStorage中获取username发请求查询
+    if (JSON.stringify(user) === "{}") {
+      let username = localStorage.getItem("username");
+      dispatch(getAsycUserInfo(username));
+    }
+  }, [dispatch, user]);
+
+  //防闪屏同时避免报错，为空直接返回空元素
+  if (JSON.stringify(user) === "{}") return <></>;
+
+  const hasComment = (
+    <div className="info-list">
+      {user.commentposts.map(comment => {
+        return (
+          <MyCommentItem
+            key={comment.commentdate}
+            comment={comment}
+            ico={user.ico}
+            username={user.username}
+          />
+        );
+      })}
+      <div className="bottom-info">已显示全部内容</div>
+    </div>
+  );
+
+  const nullComment = (
+    <div className="null-list">
+      <img className="null-pic" src={nullImg} alt="" />
+      <div className="null-info">暂无内容</div>
+    </div>
+  );
 
   return (
     <>
       <Header title={MYCOMMENT} />
-      <div className="info-list">
-        <div className="item">
-          <img className="avatar" src={img1} alt="" />
-          <div className="right-info">
-            <header className="username">这是用户名字123</header>
-            <p className="info-content">宝马3系去哪里买比较好</p>
-            <span className="info-date">06-29</span>
-            <button onClick={deleteItem} className="delete-item"></button>
-          </div>
-        </div>
-        <div className="item">
-          <img className="avatar" src={img1} alt="" />
-          <div className="right-info">
-            <header className="username">这是用户名字123</header>
-            <p className="info-content">
-              后雨刷不工作了怎么办啊？后雨刷不工作后雨刷不工作了怎么办啊？后雨刷不
-            </p>
-            <span className="info-date">06-29</span>
-            <button onClick={deleteItem} className="delete-item"></button>
-          </div>
-        </div>
-        <div className="item">
-          <img className="avatar" src={img1} alt="" />
-          <div className="right-info">
-            <header className="username">这是用户名字123</header>
-            <p className="info-content">奥迪A8去哪里买比较好</p>
-            <span className="info-date">06-29</span>
-            <button onClick={deleteItem} className="delete-item"></button>
-          </div>
-        </div>
-        <div className="bottom-info">已显示全部内容</div>
-      </div>
-      <div className="null-list">
-        <img className="null-pic" src={img2} alt=""/>
-        <div className="null-info">暂无内容</div>
-      </div>
+      {user.commentposts.length === 0 ? nullComment : hasComment}
     </>
   );
 });
