@@ -85,6 +85,8 @@ export default memo(function Issue(props) {
     if (content) {
       setIsVisible(true);
     } else {
+      //清除选了的车友圈
+      dispatch(saveCheckCircle({}));
       props.history.replace("/home");
     }
   };
