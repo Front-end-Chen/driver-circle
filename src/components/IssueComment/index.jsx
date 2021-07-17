@@ -1,12 +1,13 @@
 import React, { memo, useState, useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { getAsycPosts } from "@/redux/actions/posts";
 import { issueCommentByPostID } from "@/api";
 import { getAsycUserInfo } from "@/redux/actions/user";
 import { Toast } from "antd-mobile";
 import "./css/index.less";
 
-export default memo(function IssueComment(props) {
+function IssueComment(props) {
   //缓存当前帖子post
   let curPost = props.post;
 
@@ -49,6 +50,7 @@ export default memo(function IssueComment(props) {
         curPost.comments.push(comment);
         const result = await issueCommentByPostID(curPost);
         if (result.id) {
+          setIssueContent("")
           Toast.success("评论成功！", 1.5);
           dispatch(getAsycPosts());
         } else {
@@ -75,4 +77,6 @@ export default memo(function IssueComment(props) {
       </button>
     </div>
   );
-});
+};
+
+export default withRouter(memo(IssueComment))

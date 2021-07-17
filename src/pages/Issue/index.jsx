@@ -147,6 +147,9 @@ export default memo(function Issue(props) {
     }
     const result = await issuePosts(post);
     if (result.id) {
+      setContent("")
+      localStorage.removeItem("postTmp" + user.id);
+      dispatch(saveCheckCircle({}));
       Toast.success("发布成功！", 1.5);
       dispatch(getAsycPosts());
       props.history.replace("/home");
